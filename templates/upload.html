@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block heading %}
+
+    <div class="isi" style="padding: 4rem 0">
+      <div class="row">
+          <div class="col-sm-10 " style="float:none;margin:auto;">
+              <div class="name">
+                  <h3 style="padding: 2rem; text-align: center;">Upload your File here 
+                    <i class="bi bi-cloud-arrow-up-fill"></i></h3>
+              </div>
+              <div class="kotak">
+                <form method="POST" action="/submit" enctype="multipart/form-data">
+                  <div class="row" style="padding: 2rem;">
+                    <input type="file" name="file" class="choosefile" >
+                  </div>
+                  <div class="row" style="padding: 2rem;">
+                    <input type="submit" class ="btn btn-danger parse" value="Parse">
+                  </div>
+                </form>
+  
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+{% endblock %}

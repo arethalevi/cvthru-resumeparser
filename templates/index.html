@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CVthru Parser</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/unicons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/tooplate-style.css') }}">
+    
+    
+
+  </head>
+
+  <body>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="container">
+            <a class="navbar-brand" href="/"> <i class="bi bi-clipboard-check" style="font-size: 25px;"></i> &nbsp; CVthru</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                        <a href="/" class="nav-link"><span data-hover="Home">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profile" class="nav-link"><span data-hover="Profile">Profile</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-lg-2">
+                    <div class="ml-lg-4">
+                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                        <i class="color-mode-icon"></i>
+                        Color mode
+                      </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block  heading %}
+    <!-- ABOUT -->
+    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+                    <div class="about-text">
+                        <h1 class="animated animated-text">
+                            <span class="mr-2">What's up! We're here to</span>
+                                <div class="animated-info">
+                                    <span class="animated-item">Parse</span>
+                                    <span class="animated-item">Extract</span>
+                                    <span class="animated-item">Analyzed</span>
+                                </div>
+                        </h1>
+                        <p> Let's try our product now! </p> 
+                        <p>Effective way for easier decisions.</p>
+                        <p></p>
+                        <div class="custom-btn-group mt-4">
+                          <a href="{{url_for('upload')}}" class="btn custom-btn custom-btn-bg custom-btn-link">START</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="about-image jpg">
+                        <img src="{{url_for('static',filename='images/undraw/5180211.jpg')}}" class="img-fluid" alt="jpg image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile -->
+    <section class="project py-5" id="profile">
+        <div class="container">
+                
+                <div class="row">
+                  <div class="col-lg-11 text-center mx-auto col-12">
+
+                      <div class="col-lg-8 mx-auto">
+                        <h2>Get to Know Us</h2>
+                      </div>
+
+                      <div class="owl-carousel owl-theme">
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="{{ url_for('static', filename= 'images/project/cv1.png') }}" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="{{ url_for('static',filename='images/project/cv2.png') }}" class="img-fluid" alt="project image">
+                          </div>
+                        </div>                
+
+                      </div>
+
+                  </div>
+                </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact py-5" id="contact">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-lg-11 text-center mx-auto col-12">
+            <div class="google-map w-100">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3254.4218436489523!2d112.78486744169557!3d-7.26669213382917!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb7a9bdf4517%3A0x5b8bbf8317f96ed5!2sGedung%20Kuliah%20Bersama%20(GKB)%20UNAIR%20Kampus%20C!5e0!3m2!1sen!2sid!4v1669951442844!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+                <div class="contact-info-item">
+                  <h3 class="mb-3 text-white">NLP Project</h3>
+                  <p class="footer-text mb-0">+6281239873456</p>
+                </div>
+
+                <ul class="social-links">
+                     <li><a href="#" class="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
+                     <li><a href="#" class="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a></li>
+                </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
+
+    <!-- FOOTER -->
+     <footer class="footer py-5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-12 col-12">                                
+                        <p class="copyright-text text-center">Copyright &copy; 2022 CVthru . All rights reserved</p>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+    <script src="{{ url_for('static', filename = 'js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/Headroom.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/jQuery.headroom.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/smoothscroll.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/custom.js') }}"></script>
+
+  </body>
+</html>

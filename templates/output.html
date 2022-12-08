@@ -1,0 +1,86 @@
+{% extends 'index.html' %}
+{% block heading %}
+
+
+    
+    
+<div class="isi" style="padding: 4rem 0">
+    <div class="row">
+        <div class="col-sm-10 " style="float:none;margin:auto;">
+            <div class="name">
+                <h3 style="padding: 2rem;">Output Resume Parser:</h3>
+            </div>
+            <div class="card">
+                <table>
+                    <tr>
+                        <td class = 'kiri'>Name</td>
+                        <td class = "kanan">
+                            <button type="button" class="btn btn-light">{{ linked.name }}</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = 'kiri'>Phone</td>
+                        <td class = 'kanan'>
+                            <button type="button" class="btn btn-light">{{ linked.phone }}</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = 'kiri'>Email</td>
+                        <td class = 'kanan'>
+                            <button type="button" class="btn btn-light">{{ linked.email }}</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = 'kiri'>LinkedIn</td>
+                        <td class="kanan">
+                        {% for item in linked.linkedin %}
+                            <a class="btn btn-light" href="{{ item }}" role="button">{{ item }}</a>
+                        {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = 'kiri'>Education</td>
+                        <td class = 'kanan'>
+                            {% for item in linked.education %}
+                            <button type="button" class="btn btn-light">{{ item }}</button>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = 'kiri'>Degree</td>
+                        <td class = "kanan">
+                            {% for item in linked.degree %}
+                            <button type="button" class="btn btn-light">{{ item }}</button>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = 'kiri'>GPA</td>
+                        <td class = "kanan">
+                            {% for item in linked.gpa %}
+                            <button type="button" class="btn btn-light">{{ item }}</button>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = 'kiri'>Skills</td>
+                        <td class = 'kanan'>
+                            {% for item in linked.skills %}
+                            <button type="button" class="btn btn-light">{{ item }}</button>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class = 'kiri'>Resume File</td>
+                        <td class = 'kanan'>
+                            <a href="{{ url_for('static', filename='uploadedfile/'+ linked.path) }}" class="btn btn-light" role="button">Click here to see</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+  
+  {% endblock %}
