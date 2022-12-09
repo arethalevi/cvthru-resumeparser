@@ -90,10 +90,23 @@ def extract_univ(resume_text):
     return matches
 
 def extract_degree(resume_text):
-    sub_patterns = ['Bachelor of [a-zA-Z\s]+','Master of [a-zA-Z\s]+']
+    sub_patterns = ['Bachelor [a-zA-Z\s]+','Master of [a-zA-Z\s]+']
     pattern = '({})'.format('|'.join(sub_patterns))
     matches = re.findall(pattern, resume_text)
-    return matches
+    nlp = spacy.load('en_core_web_sm')
+    nlp_text = nlp(resume_text)
+
+    tokens = [token.text for token in nlp_text if not token.is_stop]
+    df = pd.read_csv("degree.csv")
+    a = list(df['degrees'])
+    
+    degree = []
+    for token in tokens:
+        if token in a:
+            degree.append(token)
+    
+    deg = degree+matches
+    return deg
 
 def extract_gpa(resume_text):
     x=[]
