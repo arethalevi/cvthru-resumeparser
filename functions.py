@@ -157,6 +157,7 @@ def resume_parse_doc(doc):
     degree = extract_degree(text)
     gpa = extract_gpa(text)
     skills = extract_skills(text)
+    linkedin = extract_linkedin(text)
     jadi = {
         'name':name,
         'phone':phone,
@@ -164,7 +165,8 @@ def resume_parse_doc(doc):
         'education':education,
         'degree': degree,
         'gpa':gpa,
-        'skills':skills
+        'skills':skills,
+        'linkedin':linkedin
     }
     return jadi
 
